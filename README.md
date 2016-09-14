@@ -3,6 +3,12 @@ github test
 
 A webapp with a login page (using laravel / vue.js) .
 Once users log in, have them answer a set of "behavioral" questions.
+Load
+*Example Questions<br>
+database/questions_example_data.sql<br>
+*Example Answers<br>
+database/answers_example_data.sql<br>
+
 <br><br>
 CSS and JS Path Locations file  resources/views/layouts/app.blade.php<br>
 <br>
