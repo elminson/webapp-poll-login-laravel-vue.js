@@ -81,6 +81,8 @@ new Vue({
           this.showDashboard=true;
           this.loginForm= false;
           this.submittedPoll = localStorage.getItem('polldone');
+          //Redirect to reload localStorage
+          location.href = this.urlapi+'vue';
         } else {
           this.errorMsg=result.error;
           this.error= true;
