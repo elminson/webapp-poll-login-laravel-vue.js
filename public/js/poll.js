@@ -38,15 +38,15 @@ new Vue({
 		fetchQuestions: function () {
 			//Here I used https://github.com/vuejs/vue-resource
 			 this.$http.get('/abilto/webapp/public/api/questions').then((response) => {
-    this.$set('questions',response.body);
-    
-  }, (response) => {
-  	//this could be handled better
-    alert('Error!');
-  });
+		    this.$set('questions',response.body);
+		    
+		  }, (response) => {
+		  	//this could be handled better
+		    alert('Error!');
+		  });
        
    		},
-  	//Submit the user answers
+  		//Submit the user answers
    		SubmitForm: function (target) {
    			//disable the submit form 
    	  		target.preventDefault();

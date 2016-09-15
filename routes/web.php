@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 
 Route::get('/home', 'HomeController@index');
+Route::get('/vue', 'VueHomeController@index');
 Route::get('/test', 'HomeController@test');
 
 // Authentication Routes...
@@ -36,6 +37,10 @@ $this->post('password/reset', 'Auth\PasswordController@reset');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Auth::routes();
 

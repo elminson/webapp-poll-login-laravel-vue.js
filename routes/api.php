@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Contracts\Auth\Guard;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,6 +12,21 @@ use Illuminate\Support\Facades\Request;
 */
 
 Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+
+Route::post('/login', function () {
+		$request=Request::All();
+		if(empty($request)) return array('error'=>true);
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+  			$user_data=Auth::getuser();
+  			return array('id'=>$user_data->id,'token'=>$user_data->remember_token,'name'=>$user_data->name,'email'=>$user_data->email);
+		} else {
+		return array('error'=>'Invalid Credential');
+	}
+});
+
+Route::post('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
@@ -42,8 +59,13 @@ return $data;
 Route::post('/useranswers', function (){
 		$result=Request::All();
 		if(empty($result)) return array('error'=>true);
-		$user=$result['user'];
-		unset($result['user']);
+		$user=$result['id'];
+		$token=$result['token'];
+		unset($result['id']);
+		unset($result['token']);
+		//Validate with the token valid user
+		//
+		//
 		$arra_data=array();
 			foreach ($result as $key => $value) {
 				if(is_array($value)){

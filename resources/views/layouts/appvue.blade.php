@@ -20,7 +20,7 @@
         ]); ?>
     </script>
 </head>
-<body><div id="poll">
+<body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -46,33 +46,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/vue') }}">Login With Vue</a></li>
-                        <li><a href="{{ url('/login') }}">Login With Laravel</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li >
-                            <a href="#">{{ Auth::user()->name }} </a>
-                        </li>
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        
-                    @endif
-                </ul>
+                
             </div>
         </div>
     </nav>
@@ -82,6 +56,6 @@
     <!-- Scripts -->
     <script src="/abilto/webapp/public/js/vendor/vue.min.js"></script>
     <script src="/abilto/webapp/public/js/vendor/vue-resource.min.js"></script>  
-    <script src="/abilto/webapp/public/js/poll.js"></script>
+    <script src="/abilto/webapp/public/js/auth.js"></script>
 </body>
 </html>
