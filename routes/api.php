@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\Guard;
+use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\UsersAnswersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +19,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::post('/login', function () {
-		$request=Request::All();
-		if(empty($request)) return array('error'=>true);
-        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
-  			$user_data=Auth::getuser();
-  			return array('id'=>$user_data->id,'token'=>$user_data->remember_token,'name'=>$user_data->name,'email'=>$user_data->email);
-		} else {
-		return array('error'=>'Invalid Credential');
-	}
+	return 	AuthController::login(Request::All());
+
 });
 
 Route::post('/user', function (Request $request) {
@@ -38,15 +35,7 @@ Route::post('/user', function (Request $request) {
 |	Get all question in the table questinos and the possibles answers
 */
 Route::get('/questions', function (){
-
-
-	$result = DB::table('questions')->get();
-	foreach ($result as $key => $value) {
-		$value->answers=DB::table('answers')->where('answers.id_question',$value->id)->get();
-		$data[]= $value;
-
-	}	
-return $data;
+return  QuestionsController::GetQuestions();
 });
 
 /*
@@ -57,32 +46,6 @@ return $data;
 */
 
 Route::post('/useranswers', function (){
-		$result=Request::All();
-		if(empty($result)) return array('error'=>true);
-		$user=$result['id'];
-		$token=$result['token'];
-		unset($result['id']);
-		unset($result['token']);
-		//Validate with the token valid user
-		//
-		//
-		$arra_data=array();
-			foreach ($result as $key => $value) {
-				if(is_array($value)){
-					foreach ($value as $key_a => $val) {
-						foreach ($val as $key_b => $val) {
-							if($val==1){
-							$array_data[]=array('id_user'=>$user,'id_question'=>$key,'id_answer'=>$key_a,'created_at'=>date('Y-m-d H:i:s'),'updated_at'=>date('Y-m-d H:i:s'));
-							}
-						}
-					}
-				} else {
-				$array_data[]=array('id_user'=>$user,'id_question'=>$key,'id_answer'=>$value,'created_at'=>date('Y-m-d H:i:s'),'updated_at'=>date('Y-m-d H:i:s'));
-				}
-			}
-DB::table('users_answers')->insert($array_data);		
-return $array_data;
-
-	//return App\UsersAnswers::create(Request::all());
+	return UsersAnswersController::Save(Request::all());
 });
 
