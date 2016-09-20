@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -154,6 +154,16 @@ class AuthController extends Controller
         $this->auth->logout();
         Session::flush();
         return redirect('/');
+    }
+
+    public static function login($request){
+        if(empty($request)) return array('error'=>true);
+        if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+            $user_data=Auth::getuser();
+            return array('id'=>$user_data->id,'token'=>$user_data->remember_token,'name'=>$user_data->name,'email'=>$user_data->email);
+        } else {
+        return array('error'=>'Invalid Credential');
+    }
     }
 
     
