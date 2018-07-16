@@ -15,21 +15,21 @@ path public/js/auth.js<br>
 <code>change for your api path this.urlapi=/abilto/webapp/public/;<br></code>
 <br>
 <br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/css/app.css<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/css/styles.css <br>
+remove => /webapp/ => from => /webapp/public/css/app.css<br>
+remove => /webapp/ => from => /webapp/public/css/styles.css <br>
 <br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/vendor/vue.min.js<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/vendor/vue-resource.min.js<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/poll.js<br>
+remove => /webapp/ => from => /webapp/public/js/vendor/vue.min.js<br>
+remove => /webapp/ => from => /webapp/public/js/vendor/vue-resource.min.js<br>
+remove => /webapp/ => from => /webapp/public/js/poll.js<br>
 
 
 <br><br>
 CSS and JS Path Locations file Laravel Login  resources/views/layouts/app.blade.php<br>
 <br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/css/app.css<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/css/styles.css <br>
+remove => /webapp/ => from => /webapp/public/css/app.css<br>
+remove => /webapp/ => from => /webapp/public/css/styles.css <br>
 <br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/vendor/vue.min.js<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/vendor/vue-resource.min.js<br>
-remove => /abilto/webapp/ => from => /abilto/webapp/public/js/poll.js<br>
+remove => /webapp/ => from => /webapp/public/js/vendor/vue.min.js<br>
+remove => /webapp/ => from => /webapp/public/js/vendor/vue-resource.min.js<br>
+remove => /webapp/ => from => /webapp/public/js/poll.js<br>
 
