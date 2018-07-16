@@ -76,7 +76,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   <img src="https://www.abilto.com/wp-content/uploads/2015/07/AbilTo_Logo-header-black3-300x113.png"> 
+                   <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"> 
                 </div>
 
                
