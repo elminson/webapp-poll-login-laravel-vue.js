@@ -6,7 +6,7 @@ new Vue({
           //if poll was filled in the pass just hidden form
           this.submittedPoll = localStorage.getItem('polldone');
           this.error=false;
-          this.urlapi='/abilto/webapp/public/';
+          this.urlapi='/webapp/public/';
           if (localStorage.getItem('token')) {
             this.showDashboard=true;
             this.fetchQuestions();
@@ -23,7 +23,7 @@ new Vue({
         error: false,
         errorMsg: '',
         showDashboard: false,
-        urlapi: '/abilto/webapp/public/'
+        urlapi: '/webapp/public/'
     },
 
     computed: {
