@@ -12,7 +12,7 @@ database/answers_example_data.sql<br>
 <br><br>
 CSS and JS Path Locations file Laravel/Vue Login  resources/views/layouts/appvue.blade.php<br>
 path public/js/auth.js<br>           
-<code>change for your api path this.urlapi=/abilto/webapp/public/;<br></code>
+<code>change for your api path this.urlapi=/webapp/public/;<br></code>
 <br>
 <br>
 remove => /webapp/ => from => /webapp/public/css/app.css<br>
