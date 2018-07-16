@@ -32,7 +32,7 @@ new Vue({
 	methods: {
 
 		fetchQuestions: function () {
-			 this.$http.get('/abilto/webapp/public/api/questions').then((response) => {
+			 this.$http.get('/webapp/public/api/questions').then((response) => {
     this.$set('questions',response.body);
     
 
@@ -48,7 +48,7 @@ new Vue({
             var data = this.Answers;
             
             this.submitted = true;
-            this.$http.post('/abilto/webapp/public/api/useranswers', data);
+            this.$http.post('/webapp/public/api/useranswers', data);
 
     }
 	}

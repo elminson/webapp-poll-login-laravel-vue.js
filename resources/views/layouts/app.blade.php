@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/abilto/webapp/public/css/styles.css" rel="stylesheet">
+    <link href="/webapp/public/css/styles.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Scripts -->
     <script>
@@ -35,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                  <img width="70px" src="https://www.abilto.com/wp-content/uploads/2015/07/AbilTo_Logo-header-black3-300x113.png"> 
+                  <img width="70px" src="logo.png">
                 </a>
             </div>
 
@@ -80,8 +80,8 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="/abilto/webapp/public/js/vendor/vue.min.js"></script>
-    <script src="/abilto/webapp/public/js/vendor/vue-resource.min.js"></script>  
-    <script src="/abilto/webapp/public/js/poll.js"></script>
+    <script src="/webapp/public/js/vendor/vue.min.js"></script>
+    <script src="/webapp/public/js/vendor/vue-resource.min.js"></script>
+    <script src="/webapp/public/js/poll.js"></script>
 </body>
 </html>
