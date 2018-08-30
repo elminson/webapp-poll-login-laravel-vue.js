@@ -19,6 +19,41 @@ class CreateAnswersTable extends Migration
             $table->text('answer');
             $table->timestamps();
         });
+        // Insert some stuff
+        DB::table('questions')->insert(
+            array(
+                'id_question' => 1,
+                'answer' => 'Bad'
+            ),
+            array(
+                'id_question' => 1,
+                'answer' => 'Good'
+            ),
+            array(
+                'id_question' => 1,
+                'answer' => 'Excelent'
+            ),
+            array(
+                'id_question' => 2,
+                'answer' => 'Fruits'
+            ),
+            array(
+                'id_question' => 2,
+                'answer' => 'Cereal'
+            ),
+            array(
+                'id_question' => 2,
+                'answer' => 'Coffee'
+            ),
+            array(
+                'id_question' => 3,
+                'answer' => 'Yes'
+            ),
+            array(
+                'id_question' => 3,
+                'answer' => 'No'
+            )
+        );
     }
 
     /**
