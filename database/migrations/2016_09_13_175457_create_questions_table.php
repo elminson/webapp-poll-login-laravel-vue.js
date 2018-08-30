@@ -19,6 +19,23 @@ class CreateQuestionsTable extends Migration
             $table->string('type');
             $table->timestamps();
         });
+
+        // Insert some stuff
+        DB::table('questions')->insert(
+            array(
+                'question' => 'How did you feel?',
+                'type' => 'radio'
+            ),
+            array(
+                'question' => 'What did you have for Breakfast?',
+                'type' => 'checkbox'
+            ),
+            array(
+                'question' => 'Did you run Today?',
+                'type' => 'radio'
+            )
+
+        );
     }
 
     /**
