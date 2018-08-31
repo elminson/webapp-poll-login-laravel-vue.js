@@ -37,7 +37,7 @@ new Vue({
 		// Get All questions from the api and created 
 		fetchQuestions: function () {
 			//Here I used https://github.com/vuejs/vue-resource
-			 this.$http.get('/webapp/public/api/questions').then((response) => {
+			 this.$http.get('api/questions').then((response) => {
 		    this.$set('questions',response.body);
 		    
 		  }, (response) => {
@@ -56,7 +56,7 @@ new Vue({
             this.submitted = true;
             //Send Answers
             //Here I used https://github.com/vuejs/vue-resource
-            this.$http.post('/webapp/public/api/useranswers', data);
+            this.$http.post('api/useranswers', data);
 
     }
 	}

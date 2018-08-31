@@ -25,10 +25,10 @@ class UsersAnswersController extends Controller
      */
     public static function Save($result){
 		if(empty($result)) return array('error'=>true);
-		$user=$result['id'];
-		$token=$result['token'];
-		unset($result['id']);
-		unset($result['token']);
+		$user=$result['user'];
+		//$token=$result['token'];
+		unset($result['user']);
+//		unset($result['token']);
 		//Validate with the token valid user
 		//
 		//

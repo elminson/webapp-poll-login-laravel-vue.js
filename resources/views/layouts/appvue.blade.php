@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/webapp/public/css/styles.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Scripts -->
     <script>
@@ -54,8 +54,8 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="/webapp/public/js/vendor/vue.min.js"></script>
-    <script src="/webapp/public/js/vendor/vue-resource.min.js"></script>
-    <script src="/webapp/public/js/auth.js"></script>
+    <script src="js/vendor/vue.min.js"></script>
+    <script src="js/vendor/vue-resource.min.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

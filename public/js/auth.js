@@ -6,7 +6,7 @@ new Vue({
           //if poll was filled in the pass just hidden form
           this.submittedPoll = localStorage.getItem('polldone');
           this.error=false;
-          this.urlapi='/webapp/public/';
+          this.urlapi='/';
           if (localStorage.getItem('token')) {
             this.showDashboard=true;
             this.fetchQuestions();
@@ -23,7 +23,7 @@ new Vue({
         error: false,
         errorMsg: '',
         showDashboard: false,
-        urlapi: '/webapp/public/'
+        urlapi: '/'
     },
 
     computed: {

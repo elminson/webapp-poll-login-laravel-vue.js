@@ -13,7 +13,8 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::dropIfExists('questions');
+	Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('question');
             $table->string('type');

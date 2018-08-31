@@ -13,6 +13,7 @@ class CreateAnswersTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('answers');
         Schema::create('answers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_question');
@@ -20,7 +21,7 @@ class CreateAnswersTable extends Migration
             $table->timestamps();
         });
         // Insert some stuff
-        DB::table('questions')->insert(
+        DB::table('answers')->insert(
             array(
                 'id_question' => 1,
                 'answer' => 'Bad'
